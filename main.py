@@ -82,6 +82,7 @@ def main():
         if user_input:
             st.session_state.messages.append(HumanMessage(content=user_input))
             with st.spinner("Pensando..."):
+                print(st.session_state.messages)
                 response = chat(st.session_state.messages)
             st.session_state.messages.append(
                 AIMessage(content=response.content))
